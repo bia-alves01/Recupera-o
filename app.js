@@ -13,13 +13,13 @@ app.post("/usuario/novo", (req, res) =>{
         //"!" = "nome == undefined"
         //Verificar se o Nome será valido 
         if (! nome || nome.length < 3) {
-            return res.status(400).json(`Erro: Nome inválido! Necessário mais de 3 carateres!`);
+            return res.status(400).json("Erro: Nome inválido! Necessário mais de 3 carateres!");
         }//"nome.length > 3" Esse comando verificará se a Variável "Nome" será maior que 3 caracteres;
         //".lenght" comando que retorna a quantidade de caracteres cadastrado dentro da string;
 
         //Verificar se email é valido
         if (! email || !email.includes("@")){
-            return res.status(400).json(`Erro: Email não inválido!`);
+            return res.status(400).json("Erro: Email não inválido!");
         }//"email.includes(@)" Comando que verificará se "Email" terá "@"
         //".includes(@)" Comando que verificará que na string ou na array contém "@"
 
@@ -27,10 +27,10 @@ app.post("/usuario/novo", (req, res) =>{
             return res.status(400).json(`Erro: Senha inválida! Necessário ter menos de 8 caracteres! `);
         }//"senha.length < 8 " Verificará se "Senha" vao ser maior que 8 caracteres  
 
-        res.status(200).json(`Usuário cadastrado com sucesso!`);
+        res.status(200).json("Usuário cadastrado com sucesso!");
 
     } catch (error) {
-        console.log(`Erro:`, error);
+        console.log("Erro:", error);
         res.status(500).json({errorMessage: error});
     }
 });
